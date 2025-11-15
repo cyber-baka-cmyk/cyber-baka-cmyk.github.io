@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="plant_8h" kind="file" language="C++">
+    <compoundname>plant.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">cmath</includes>
+    <includedby refid="main_8cpp" local="yes">/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/main.cpp</includedby>
+    <includedby refid="plant_8cpp" local="yes">/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.cpp</includedby>
+    <includedby refid="plant__test_8cpp" local="yes">/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/test/plant_test.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h</label>
+        <link refid="plant_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cmath</label>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structabcd" prot="public">abcd</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="plant_8h_1a47a3055a2d642875ee380983903f7bba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; linear_func</definition>
+        <argsstring>(int steps, double a, double b, const std::vector&lt; double &gt; &amp;u, double y0, double y1)</argsstring>
+        <name>linear_func</name>
+        <param>
+          <type>int</type>
+          <declname>steps</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y1</declname>
+        </param>
+        <briefdescription>
+<para>Линейная дискретная модель объекта: y[i] = a*y[i-1] + b*u[i-1]. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>steps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Количество шагов. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Коэффициент обратной связи. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Коэффициент передачи управляющего сигнала. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>u</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Управляющее воздействие (вектор длины &gt;= steps). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Начальное значение y(0). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Значение y(1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Вектор выходной переменной y. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" line="31" column="13" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.cpp" bodystart="3" bodyend="13" declfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" declline="31" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="plant_8h_1ac181f0e3a92d6dc9f0255ad353df8220" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; nonlinear_func</definition>
+        <argsstring>(int steps, const abcd &amp;str_fun, const std::vector&lt; double &gt; &amp;u, double y0, double y1)</argsstring>
+        <name>nonlinear_func</name>
+        <param>
+          <type>int</type>
+          <declname>steps</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structabcd" kindref="compound">abcd</ref> &amp;</type>
+          <declname>str_fun</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y1</declname>
+        </param>
+        <briefdescription>
+<para>Нелинейная дискретная модель объекта: y[i] = a*y[i-1] - b*y[i-2]^2 + c*u[i-1] + d*sin(u[i-2]) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>steps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Количество шагов. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str_fun</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Структура коэффициентов (a,b,c,d). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>u</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Управляющее воздействие (вектор длины &gt;= steps). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Начальное значение y(0). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Значение y(1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Вектор выходной переменной y. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" line="45" column="13" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.cpp" bodystart="15" bodyend="28" declfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" declline="45" declcolumn="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PLANT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PLANT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="structabcd" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structabcd" kindref="compound">abcd</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a{1.0};</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b{0.0};</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>c{1.0};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>d{0.0};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">std::vector&lt;double&gt;<sp/>linear_func(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>steps,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;double&gt;&amp;<sp/>u,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y1);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">std::vector&lt;double&gt;<sp/>nonlinear_func(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>steps,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structabcd" kindref="compound">abcd</ref>&amp;<sp/>str_fun,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;double&gt;&amp;<sp/>u,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y1);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h"/>
+  </compounddef>
+</doxygen>

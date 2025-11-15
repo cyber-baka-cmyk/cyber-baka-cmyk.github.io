@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="sim_8h" kind="file" language="C++">
+    <compoundname>sim.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">string</includes>
+    <includes refid="pid_8h" local="yes">pid.h</includes>
+    <includedby refid="main_8cpp" local="yes">/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/main.cpp</includedby>
+    <includedby refid="sim_8cpp" local="yes">/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/sim.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>pid.h</label>
+        <link refid="pid_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/sim.h</label>
+        <link refid="sim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>cstddef</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structSimResult" prot="public">SimResult</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="sim_8h_1ac61f484b31b7a26491d7936587390475" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename PlantStep</type>
+          </param>
+          <param>
+            <type>typename WFunc</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structSimResult" kindref="compound">SimResult</ref></type>
+        <definition>SimResult run_simulation</definition>
+        <argsstring>(int steps, double T0, const PIDConfig &amp;pid, PlantStep plant_step, WFunc w_func, double y0=0.0, double y1=0.0)</argsstring>
+        <name>run_simulation</name>
+        <param>
+          <type>int</type>
+          <declname>steps</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>T0</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structPIDConfig" kindref="compound">PIDConfig</ref> &amp;</type>
+          <declname>pid</declname>
+        </param>
+        <param>
+          <type>PlantStep</type>
+          <declname>plant_step</declname>
+        </param>
+        <param>
+          <type>WFunc</type>
+          <declname>w_func</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y0</declname>
+          <defval>0.0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y1</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+<para>Запуск симуляции ПИД+объект по шагам. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>steps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Количество шагов. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>T0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Шаг дискретизации. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Конфигурация ПИД‑регулятора. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plant_step</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Функция шага объекта: (k, u[k], y[k-1], y[k-2]) -&gt; y[k]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Профиль задания w(k). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y0</parametername>
+<parametername>y1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Начальные значения выхода. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Результат симуляции (векторы t,w,y,u,e). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/sim.h" line="32" column="11" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/sim.h" bodystart="32" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="sim_8h_1a5d892bf20d00117fb9c5f37d5249244f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void save_csv</definition>
+        <argsstring>(const std::string &amp;path, const SimResult &amp;r)</argsstring>
+        <name>save_csv</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structSimResult" kindref="compound">SimResult</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+<para>Сохранить результаты в CSV. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/sim.h" line="76" column="6" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/sim.cpp" bodystart="5" bodyend="12" declfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/sim.h" declline="76" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SIM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pid.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="structSimResult" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structSimResult" kindref="compound">SimResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>T0{0.1};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>t;<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>w;<sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>y;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>u;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>e;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>PlantStep,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>WFunc&gt;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="structSimResult" kindref="compound">SimResult</ref><sp/>run_simulation(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>steps,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>T0,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structPIDConfig" kindref="compound">PIDConfig</ref>&amp;<sp/>pid,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PlantStep<sp/>plant_step,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WFunc<sp/>w_func,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y0<sp/>=<sp/>0.0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y1<sp/>=<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSimResult" kindref="compound">SimResult</ref><sp/>res;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>res.T0<sp/>=<sp/>T0;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>res.t.resize(steps);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>res.w.resize(steps);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>res.y.resize(steps);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>res.u.resize(steps);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>res.e.resize(steps);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classPID" kindref="compound">PID</ref><sp/>pid_ctrl(pid);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>pid_ctrl.reset(0.0,<sp/>0.0,<sp/>0.0);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(steps<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.t[0]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.w[0]<sp/>=<sp/>w_func(0);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.y[0]<sp/>=<sp/>y0;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.e[0]<sp/>=<sp/>res.w[0]<sp/>-<sp/>res.y[0];</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.u[0]<sp/>=<sp/>pid_ctrl.step(res.e[0]);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(steps<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.t[1]<sp/>=<sp/>T0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.w[1]<sp/>=<sp/>w_func(1);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.y[1]<sp/>=<sp/>y1;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.e[1]<sp/>=<sp/>res.w[1]<sp/>-<sp/>res.y[1];</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.u[1]<sp/>=<sp/>pid_ctrl.step(res.e[1]);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>2;<sp/>k<sp/>&lt;<sp/>steps;<sp/>++k)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.t[k]<sp/>=<sp/>k<sp/>*<sp/>T0;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.w[k]<sp/>=<sp/>w_func(k);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.e[k]<sp/>=<sp/>res.w[k]<sp/>-<sp/>res.y[k<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.u[k]<sp/>=<sp/>pid_ctrl.step(res.e[k]);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.y[k]<sp/>=<sp/>plant_step(k,<sp/>res.u[k],<sp/>res.y[k<sp/>-<sp/>1],<sp/>res.y[k<sp/>-<sp/>2]);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>res;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>save_csv(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structSimResult" kindref="compound">SimResult</ref>&amp;<sp/>r);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/sim.h"/>
+  </compounddef>
+</doxygen>

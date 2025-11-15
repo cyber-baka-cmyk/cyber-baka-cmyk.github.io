@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="plant__test_8cpp" kind="file" language="C++">
+    <compoundname>plant_test.cpp</compoundname>
+    <includes local="no">gtest/gtest.h</includes>
+    <includes refid="plant_8h" local="yes">plant.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">cmath</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>plant.h</label>
+        <link refid="plant_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/test/plant_test.cpp</label>
+        <link refid="plant__test_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>cmath</label>
+      </node>
+      <node id="2">
+        <label>gtest/gtest.h</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="plant__test_8cpp_1add2c3e542ed4c5ff454217be4bd1c2aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(PlantLinearTest, ConstantInput)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>PlantLinearTest</type>
+        </param>
+        <param>
+          <type>ConstantInput</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/test/plant_test.cpp" line="6" column="1" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/test/plant_test.cpp" bodystart="6" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="plant__test_8cpp_1a99919a3fee9c6aad1f1b09c7263c0ddd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(PlantNonlinearTest, BasicCheck)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>PlantNonlinearTest</type>
+        </param>
+        <param>
+          <type>BasicCheck</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/test/plant_test.cpp" line="15" column="1" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/test/plant_test.cpp" bodystart="15" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;gtest/gtest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;plant.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">TEST(PlantLinearTest,<sp/>ConstantInput)<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>steps<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>u(steps,<sp/>1.0);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>y<sp/>=<sp/>linear_func(steps,<sp/>0.5,<sp/>0.5,<sp/>u,<sp/>0.0,<sp/>0.0);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_EQ(y.size(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(steps));</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_NEAR(y[2],<sp/>0.5<sp/>*<sp/>y[1]<sp/>+<sp/>0.5<sp/>*<sp/>u[1],<sp/>1e-9);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">TEST(PlantNonlinearTest,<sp/>BasicCheck)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>steps<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>u(steps,<sp/>1.0);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structabcd" kindref="compound">abcd</ref><sp/>coeff{1.0,<sp/>0.1,<sp/>0.5,<sp/>0.2};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>y<sp/>=<sp/>nonlinear_func(steps,<sp/>coeff,<sp/>u,<sp/>0.0,<sp/>0.0);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>ASSERT_EQ(y.size(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(steps));</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_NEAR(y[2],<sp/>coeff.a<sp/>*<sp/>y[1]<sp/>-<sp/>coeff.b<sp/>*<sp/>y[0]<sp/>*<sp/>y[0]<sp/>+<sp/>coeff.c<sp/>*<sp/>u[1]<sp/>+<sp/>coeff.d<sp/>*<sp/>std::sin(u[0]),<sp/>1e-9);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/test/plant_test.cpp"/>
+  </compounddef>
+</doxygen>

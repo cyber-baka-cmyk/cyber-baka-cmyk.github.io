@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structabcd" kind="struct" language="C++" prot="public">
+    <compoundname>abcd</compoundname>
+    <includes refid="plant_8h" local="no">plant.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structabcd_1afb3fc1d4534a9a4cea2f612ef203eb2e" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double abcd::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <qualifiedname>abcd::a</qualifiedname>
+        <initializer>{1.0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" line="13" column="12" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="variable" id="structabcd_1a49db4762373b486a11829998791dc299" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double abcd::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <qualifiedname>abcd::b</qualifiedname>
+        <initializer>{0.0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" line="14" column="12" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="variable" id="structabcd_1a92a1b0056c5c82490a9252fff3bbc22e" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double abcd::c</definition>
+        <argsstring></argsstring>
+        <name>c</name>
+        <qualifiedname>abcd::c</qualifiedname>
+        <initializer>{1.0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" line="15" column="12" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="structabcd_1aeccfa0aff4102a54ab38599fb1aafc98" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double abcd::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <qualifiedname>abcd::d</qualifiedname>
+        <initializer>{0.0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" line="16" column="12" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" bodystart="16" bodyend="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Коэффициенты нелинейной модели. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>y[i] = a*y[i-1] - b*y[i-2]^2 + c*u[i-1] + d*sin(u[i-2]) </para>
+    </detaileddescription>
+    <location file="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" line="12" column="1" bodyfile="/home/dorz-ian/OTIS-2025/trunk/ii02726/task_03/src/plant.h" bodystart="12" bodyend="17"/>
+    <listofallmembers>
+      <member refid="structabcd_1afb3fc1d4534a9a4cea2f612ef203eb2e" prot="public" virt="non-virtual"><scope>abcd</scope><name>a</name></member>
+      <member refid="structabcd_1a49db4762373b486a11829998791dc299" prot="public" virt="non-virtual"><scope>abcd</scope><name>b</name></member>
+      <member refid="structabcd_1a92a1b0056c5c82490a9252fff3bbc22e" prot="public" virt="non-virtual"><scope>abcd</scope><name>c</name></member>
+      <member refid="structabcd_1aeccfa0aff4102a54ab38599fb1aafc98" prot="public" virt="non-virtual"><scope>abcd</scope><name>d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
